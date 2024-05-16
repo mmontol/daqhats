@@ -28,13 +28,13 @@ enum SpiBus
                                             // that take a microsecond argument
 
 /// \cond
-// The Raspberry Pi SPI device driver names
-#define SPI_DEVICE_0            "/dev/spidev0.0"
-#define SPI_DEVICE_1            "/dev/spidev0.1"
+// The LubanCat SPI device driver names
+#define SPI_DEVICE_0            "/dev/spidev3.0"
+#define SPI_DEVICE_1            "/dev/spidev3.1"
 /// \endcond
 
-// The Raspberry Pi I2C device driver names
-#define I2C_DEVICE_1            "/dev/i2c-1"
+// 
+#define I2C_DEVICE_1            "/dev/i2c-3"
 
 #ifdef __cplusplus
 extern "C" {

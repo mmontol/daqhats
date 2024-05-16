@@ -60,17 +60,18 @@ fi
 
 echo
 
-# Read HAT EEPROMs to /etc/mcc/hats
-echo "Reading DAQ HAT EEPROMs"
-echo
-daqhats_read_eeproms
-
-echo
-
-# Turn SPI on (needed for some MCC 118s that had incorrectly programmed EEPROMs)
-if [ $(raspi-config nonint get_spi) -eq 1 ]; then
-   raspi-config nonint do_spi 0
+# Open overlay
+if [ $(fire-config nonint get_dt_status spi3-m1) -eq 0 ]; then
+   fire-config nonint set_dt spi3-m1 ON
+fi
+if [ $(fire-config nonint get_dt_status i2c5-m0) -eq 0 ]; then
+   fire-config nonint set_dt i2c5-m0 ON
 fi
 
-echo "Shared library install complete."
+# Turn SPI on (needed for some MCC 118s that had incorrectly programmed EEPROMs)
+# if [ $(raspi-config nonint get_spi) -eq 1 ]; then
+#    raspi-config nonint do_spi 0
+# fi
+
+echo "Shared library install complete. Please reboot Lubancat!"
 echo "The Python library is not automatically installed. See README.md for instructions to install the Python library."

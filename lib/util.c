@@ -57,10 +57,12 @@
 #define FORMAT_VERSION  0x01
 
 // Board address GPIO pin numbers
-#define ADDR0_GPIO              12
+// GPIO3_B2    GPIO3_B5    GPIO3_C5    GPIO1_B2
+#define ADDR0_GPIO              10
 #define ADDR1_GPIO              13
-#define ADDR2_GPIO              26
+#define ADDR2_GPIO              21
 
+// not use
 #define IRQ_GPIO                21
 
 // EEPROM header structure

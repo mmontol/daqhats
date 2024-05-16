@@ -36,27 +36,16 @@ void gpio_init(void)
         return;
     }
 
-    // determine if this is running on a Pi 5
-    if (NULL == (chip = gpiod_chip_open_by_name("gpiochip4")))
+    // determine if this is running on a Lubancat1/2
+    if (NULL == (chip = gpiod_chip_open_by_name("gpiochip3")))
     {
-        // could not open gpiochip4, so must be < Pi 5
-        if (NULL == (chip = gpiod_chip_open_by_name("gpiochip0")))
-        {
-            // could not open gpiochip0 - error
-            printf("gpio_init: could not open gpiochip\n");
-            return;
-        }
-        else
-        {
-#ifdef DEBUG
-            printf("gpio_init: found gpiochip0\n");
-#endif
-        }
+        printf("gpio_init: could not open gpiochip\n");
+        return;
     }
     else
     {
 #ifdef DEBUG
-        printf("gpio_init: found gpiochip4\n");
+        printf("gpio_init: found gpiochip3\n");
 #endif
     }
 
