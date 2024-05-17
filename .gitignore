@@ -1,3 +1,4 @@
 **/build/*
 **/daqhats.egg-info/*
 dist/*
+/.vscode

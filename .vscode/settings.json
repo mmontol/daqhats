@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.S": "platformio-debug.asm",
-        "nist.h": "c"
-    }
-}
